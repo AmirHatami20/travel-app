@@ -13,7 +13,7 @@ import {destinationData} from "@/data/data";
 
 const DestinationSlider = () => {
 
-    // @ts-ignore
+    //@ts-expect-error
     const sliderRef = useRef<Swiper | null>(null);
 
     // Handle previous slide
