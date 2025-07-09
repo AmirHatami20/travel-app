@@ -1,10 +1,7 @@
 "use client";
 
 import {Swiper, SwiperSlide} from "swiper/react";
-import {Autoplay} from "swiper/modules";
-import {useRef, useCallback} from "react";
-import {TfiAngleLeft, TfiAngleRight} from "react-icons/tfi";
-
+import {Autoplay, Navigation} from "swiper/modules";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -12,31 +9,15 @@ import Image from "next/image";
 import {destinationData} from "@/data/data";
 
 const CustomSlider = () => {
-    const sliderRef = useRef(null);
-
-    // Handle previous slide
-    const handlePrev = useCallback(() => {
-        if (sliderRef.current) {
-            sliderRef.current.swiper.slidePrev();
-        }
-    }, []);
-
-    // Handle next slide
-    const handleNext = useCallback(() => {
-        if (sliderRef.current) {
-            sliderRef.current.swiper.slideNext();
-        }
-    }, []);
-
     return (
         <div className="container relative">
             {/* Swiper component */}
             <Swiper
-                ref={sliderRef}
                 loop={true}
                 spaceBetween={24}
                 slidesPerView={1}
-                modules={[Autoplay]}
+                modules={[Autoplay, Navigation]}
+                navigation={{}}
                 autoplay={{delay: 3000, disableOnInteraction: false}}
                 breakpoints={{
                     500: {slidesPerView: 2},
@@ -62,24 +43,6 @@ const CustomSlider = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-
-            {/* Custom navigation buttons */}
-            <div>
-                <button
-                    onClick={handlePrev}
-                    className="swiper-button left-12"
-                    aria-label="Previous slide"
-                >
-                    <TfiAngleLeft size={24}/>
-                </button>
-                <button
-                    onClick={handleNext}
-                    className="swiper-button right-12"
-                    aria-label="Next slide"
-                >
-                    <TfiAngleRight size={24}/>
-                </button>
-            </div>
         </div>
     );
 };
