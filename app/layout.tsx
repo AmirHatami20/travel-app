@@ -13,6 +13,9 @@ const poppinsFont = Poppins({
 export const metadata: Metadata = {
     title: "Travel For You",
     description: "Travel landing page use nextjs 15",
+    icons: {
+        icon: "./logo.svg"
+    }
 };
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
