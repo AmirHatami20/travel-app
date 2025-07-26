@@ -7,12 +7,9 @@ function Hero() {
             {/* Overlay */}
             <div className="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-70"/>
             {/* Video */}
-            <video
-                src="/images/hero1.mp4"
-                autoPlay
-                muted
-                loop={true}
-                preload="metadata"
+            <img
+                src="/images/hero1.png"
+                alt="Hero"
                 className="w-full h-full object-cover"
             />
             {/* Text Content */}
