@@ -8,7 +8,7 @@ function Hero() {
             <div className="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-70"/>
             {/* Video */}
             <img
-                src="/images/hero1.png"
+                src="/images/hero1.jpg"
                 alt="Hero"
                 className="w-full h-full object-cover"
             />
